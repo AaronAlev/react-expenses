@@ -5,18 +5,21 @@ import ExpensesFilter from './ExpensesFilter';
 import { useState } from 'react';
 
 const Expenses= (props) => {
-    const [expenseFilter, setExpenseFilter] = useState('2023')
+    const [yearFilter, setExpenseFilter] = useState('2023')
 
-    const addExpenseFilterHandler = (expenseFilter) => {
-        console.log(expenseFilter)
-        setExpenseFilter(expenseFilter)
+    const filterHandler = (yearFilter) => {
+        console.log(yearFilter)
+        setExpenseFilter(yearFilter)
     }
 
     return (
         <Card className='expenses'>
-            <ExpenseItem expenseData={props.expenses[0]} />
-            <ExpenseItem expenseData={props.expenses[1]} />
-            <ExpensesFilter onAddExpenseFilter={addExpenseFilterHandler}/>
+            <ExpensesFilter onChangeFilter={filterHandler}/>
+            {
+                props.expenses.map((expense) => {
+                    return <ExpenseItem expenseData={expense} key={expense.id}/>
+                })
+            }
         </Card>
     );
 }
