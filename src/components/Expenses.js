@@ -1,22 +1,14 @@
 import './Expenses.css';
+import Card from './Card';
 import ExpenseItem from './ExpenseItem';
 
-function Expenses(children) {
-    const expenses = [{
-        date: new Date(2023, 9, 6),
-        title: 'Car Insurance',
-        amount: 294.67
-      },
-      {
-        date: new Date(2023, 9, 7),
-        title: 'Library book overdue',
-        amount: 1.45
-      }];
+function Expenses(props) {
+
     return (
-        <div className='expenses'>
-            <ExpenseItem expenseData={expenses[0]} />
-            <ExpenseItem expenseData={expenses[1]} />
-        </div>
+        <Card className='expenses'>
+            <ExpenseItem expenseData={props.expenses[0]} />
+            <ExpenseItem expenseData={props.expenses[1]} />
+        </Card>
     );
 }
 
