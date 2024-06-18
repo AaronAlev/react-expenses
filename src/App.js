@@ -11,13 +11,13 @@ const DUMMY_EXPENSES = [{
 },
 {
   id: 'id2',
-  date: new Date(2023, 9, 7),
+  date: new Date(2024, 9, 7),
   title: 'Library book overdue',
   amount: 1.45
 },
 {
   id: 'id3',
-  date: new Date(2023, 10, 7),
+  date: new Date(2024, 10, 7),
   title: 'Bandages',
   amount: 12.59
 }];
